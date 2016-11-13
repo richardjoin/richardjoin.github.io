@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/animate.min.css">
+	<link rel="stylesheet" href="./css/swiper.min.css">
+	<link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+	<div id="code"></div>
+	<div class="swiper-container">
+		<img class="ia xzz xzzz" id="xz" src="img/a.jpg" alt="">
+		<audio id="audio" autoplay loop>
+		<source src="./audio/aaa.mp3" type="audio/mp3" id="source"/>
+		</audio>
+		<img class="ig" src="img/jiantou.png" alt="">
+	  <div class="swiper-wrapper">
+	    <div class="swiper-slide slide1">
+	    	<img class="ani im" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/touxiang1.jpg" alt="">
+	    	<p class="ani ip" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+	    		<span>name:a li</span><br>
+	    		<span>zi:li luo</span>
+	    	</p>
+	  	</div>
+	    <div class="swiper-slide slide2">
+	    	<img class="ani im" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/touxiang2.jpg" alt="">
+	    	<p class="ani ip" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+	    		<span>name:a li</span><br>
+	    		<span>zi:li luo</span>
+	    	</p>
+	    </div>
+	    <div class="swiper-slide slide3">
+	    	<img class="ani im" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/touxiang3.jpg" alt="">
+	    	<p class="ani ip" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+	    		<span>name:a li</span><br>
+	    		<span>zi:li luo</span>
+	    	</p>
+	    </div>
+	    <div class="swiper-slide slide4">
+	    	<img class="ani im" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/touxiang4.jpg" alt="">
+	    	<p class="ani ip" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+	    		<span>name:a li</span><br>
+	    		<span>zi:li luo</span>
+	    	</p>
+	    </div>
+	    <div class="swiper-slide slide5">
+	    	<img class="ani im" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/touxiang5.jpg" alt="">
+	    	<p class="ani ip" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+	    		<span>name:a li</span><br>
+	    		<span>zi:li luo</span>
+	    	</p>
+	    </div>
+	    <div class="swiper-slide slide6">
+	    	<img class="ani im" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/touxiang6.jpg" alt="">
+	    	<p class="ani ip" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+	    		<span>name:a li</span><br>
+	    		<span>zi:li luo</span>
+	    	</p>
+	    </div>
+	    <div class="swiper-slide slide7">
+	    	<img class="ani im" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/touxiang7.jpg" alt="">
+	    	<p class="ani ip" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+	    		<span>name:a li</span><br>
+	    		<span>zi:li luo</span>
+	    	</p>
+	    </div>
+	  </div>
+	  <div class="swiper-pagination"></div>
+	</div>
+	<script src="js/jquery-1.11.1.js"></script>
+	<script src="js/swiper.animate1.0.2.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script>
+		window.onload=function(){
+		  var mySwiper = new Swiper ('.swiper-container', {
+			  onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+			    swiperAnimateCache(swiper); //隐藏动画元素
+			    swiperAnimate(swiper); //初始化完成开始动画
+			  },
+			  onSlideChangeEnd: function(swiper){
+			    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+			  },
+			  direction : 'vertical',
+			  autoplay: 3000,
+			  pagination : '.swiper-pagination',
+			  paginationClickable :true,
+			  paginationElement : 'li',
+			  loop: true,
+			})
+			var audio = document.getElementById('audio');
+			var xz = document.getElementById('xz');
+			// var i = 0;
+			// xz.onclick = function(){
+			// 	i = i+1;
+			// 	if(i%2==1){
+			// 		audio.pause();
+			// 		console.log(i)
+			// 	}
+			// 	if(i%2==0){
+ 		// 			audio.play();
+ 		// 			console.log(i)
+ 		// 		}
+			// }
+
+			// xz.onclick = function(){
+			// 		if(audio.paused){
+			// 			audio.play();
+			// 			$('.ia').addClass('xzz');
+
+
+			// 		}else{
+			// 			audio.pause();
+			// 			$('.ia').removeClass('xzz');
+
+			// 		}
+			// }
+			xz.onclick = function(){
+					if(audio.paused){
+						audio.play();
+						// xz.className = 'ia xzz';
+						xz.style.animationPlayState = 'running'
+					}else{
+						audio.pause();
+						// xz.className = 'ia';
+						xz.style.animationPlayState='paused'
+					}
+			}
+		}
+
+  </script>
+</body>
+</html>
